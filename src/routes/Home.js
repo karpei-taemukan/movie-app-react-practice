@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
+import style from "../Movie.module.css";
 
 function Home(){
     const body = document.querySelector("body");
@@ -13,16 +14,17 @@ function Home(){
    const json = await res.json();
    console.log(json);
    setMovies(json.data.movies);
+   setLoading(false);
   };
 
   useEffect(()=>{
     getMovies();
-    setLoading(false);
-
   },[]);
   
-    return (<div>
-    {loading ? <h1>Loading...</h1>:null}
+    return (
+    <div className={style.all}>
+    {loading ? (<div className={style.load}><span>Loading...</span></div>):
+     (<div className={style.movies}>
      {movies.map((movie) => (
      <Movie 
      id={movie.id}
@@ -32,9 +34,10 @@ function Home(){
      summary={movie.summary}
      genres={movie.genres}
      />
-     
-))}
-    </div>)
+     ))}
+     </div>
+     )}
+    </div>
+    )
 }
-
 export default Home;
