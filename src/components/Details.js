@@ -1,8 +1,11 @@
 
-function Details({torrent}){
-return (<div>
+function Details({genres}){
+
+return (
+<div>
+
 <ul>
-<li>{torrent}</li>
+<li>{genres}</li>
 </ul>
 </div>)
 };
