@@ -43,8 +43,40 @@ gap: 15px;
     border-radius: 5px;
 }
 
+.movie:hover{
+    animation: moving 2s ease-in-out infinite;
+}
+
+p::after{
+  content: "?";
+  color:chocolate;
+}
+
+@keyframes moving {
+    0%{
+        transform: translateY(0);
+       }
+       25%{
+        transform: translateY(-5px);
+       }
+       50%{
+         transform: translateY(-10px);
+       }
+       75%{
+         transform: translateY(5px)
+       }
+       100%{
+         transform: translateY(0); 
+       }
+}
+
 img{
     width: 100px;
+    transition: width 1s ease-in-out;
+}
+
+img:active{
+width: 300px;
 }
 p{
 font-size: 15px;
@@ -53,3 +85,16 @@ ul{
     padding: 0;
     list-style: none;
 }
+
+.detail{
+    margin: 10%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 5px
+}
+

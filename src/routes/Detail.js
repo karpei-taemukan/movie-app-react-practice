@@ -2,7 +2,7 @@ import Details from "../components/Details";
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {Link} from "react-router-dom";
-
+import style from "../Movie.module.css";
 
 function Detail(){
 
@@ -22,7 +22,7 @@ useEffect(()=>{
 },[]);
 
 return (
-    <div>
+    <div className={style.detail}>
     <h1>Details!</h1>
     <h1>{info.rating}/10.0</h1>
     <h2>{info.language}</h2>
