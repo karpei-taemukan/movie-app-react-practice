@@ -1,5 +1,6 @@
 
 body{
+  overflow: scroll;
     margin: 0;
     padding: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -46,7 +47,36 @@ gap: 15px;
 .movie:hover{
     animation: moving 2s ease-in-out infinite;
 }
+.movie img{
+  position: relative;
+  top: -5px;
+  transition: border 1s ease-in-out;
+  animation: moveImage 2s ease-in-out infinite;
+  box-shadow: 0 30px 60px -12px rgba(50,50,93,0.25),
+      0 18px 36px -18px rgba(0,0,0,0.3), 0 -12px 36px -8px rgba(0,0,0,0.025);
+  }
 
+  @keyframes moveImage{
+    0%{
+     transform: translateY(0);
+    }
+    25%{
+     transform: translateY(5px);
+    }
+    50%{
+      transform: translateY(10px);
+    }
+    75%{
+      transform: translateY(-5px)
+    }
+    100%{
+      transform: translateY(0); 
+    }
+  }
+
+.movie img:hover{
+  border: 2px solid red;
+}
 p::after{
   content: "?";
   color:chocolate;
@@ -85,7 +115,23 @@ ul{
     padding: 0;
     list-style: none;
 }
+hr{
+  border: none;
+  border-top: 3px double #333;
+  width: 90%;
+  height: 20%;
+  overflow: visible;
+  text-align: center;
+  margin-top: 30px;
+}
 
+hr::after{
+  content: '§';
+  background-color: antiquewhite;
+  padding: 0 4px;
+  position: relative;
+  top: -12px;
+}
 .detail{
     margin: 10%;
     padding: 0;
